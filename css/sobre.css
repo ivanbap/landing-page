@@ -30,3 +30,10 @@
     font-family: 'Poppins';
     font-weight: 300;
 }
+
+@media (max-width: 800px) {
+    .colunas-sobre {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
