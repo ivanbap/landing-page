@@ -1,0 +1,46 @@
+.duvidas {
+    background-color: #481C1E;
+}
+
+.container-duvidas {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+.titulo-duvidas {
+    padding-top: 60px;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #fff;    
+}
+.itens-duvidas {
+    ul {
+    list-style: none; /* Remove as bolinhas padrão */
+    padding-left: 0;   /* Remove o recuo padrão se necessário */
+    }
+
+    ul li {
+    position: relative;
+    padding-left: 50px; /* Abre espaço para o retângulo à esquerda */
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.125;
+    font-family: 'Poppins';
+    font-weight: 100;
+    }
+
+    ul li::before {
+    content: "";       /* Necessário para o pseudo-elemento aparecer */
+    position: absolute;
+    left: 0;
+    top: 50%;          /* Alinha ao centro da linha de texto */
+    transform: translateY(-50%); /* Ajuste fino para centralização vertical */
+    
+    /* Suas dimensões específicas */
+    width: 24px;
+    height: 1px;
+    background-color: #fff; /* Cor da linha */
+    }
+}
