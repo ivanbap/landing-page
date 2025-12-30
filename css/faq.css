@@ -12,7 +12,7 @@
     padding-top: 60px;
     text-align: center;
     margin-bottom: 40px;
-    color: #fff;    
+    color: #fff;
 }
 
 .texto-faq {
@@ -49,7 +49,8 @@
 }
 
 .faq-question {
-  width: 100%;
+  width: 900px;
+  margin: 0 auto;
   background-color: #fff;
   border: none;
   outline: none;
@@ -71,15 +72,18 @@
 
 /* O Painel da Resposta (Invisível por padrão) */
 .faq-answer {
+  width: 900px;
   max-height: 0;
+  margin: 0 auto;
   overflow: hidden;
-  transition: min-height .4s ease-out; /* Aqui acontece a mágica da extensão */
+  transition: min-height 0.4s ease; /* Aqui acontece a mágica da extensão */
   background-color: white;
   border-radius: 0px 0px 10px 10px;
 }
 
 .faq-answer p {
   color: #555;
+  font-size: 14px;
 }
 
 /* Classe que o JavaScript vai adicionar ao clicar */
@@ -96,4 +100,25 @@
 .faq-item.active .faq-question {
     border-radius: 10px 10px 0px 0px;
     transition: background 0.3s ease;
+}
+
+@media (max-width: 800px) {
+  .faq-question {
+    width: 400px;
+    font-size: 14px;
+  }
+  .faq-answer {
+    width: 400px;
+  }
+  .faq-answer p{
+    font-size: 12px;
+  }
+  .titulo-medio {
+    font-size: 36px;
+  }
+
+  .texto-faq {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }

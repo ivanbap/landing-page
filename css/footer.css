@@ -1,0 +1,39 @@
+.footer-bg {
+    background-color: #000;
+}
+
+.footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+    color: #fff;
+    display: flex;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding-top: 80px;
+    gap: 100px;
+}
+
+
+.titulo-contato {
+    margin-bottom: 40px;
+    color: #fff;
+    font-family: 'Roboto';
+    font-size: 48px;
+    line-height: 1.125;
+    font-style: italic;
+    font-weight: 100;
+}
+
+.atendimento {
+    margin-top: 20px;
+    .info-atendimento {
+        font-size: 18px;
+        line-height: 1.125;
+        font-family: 'Poppins';
+        font-weight: 300;
+        margin-bottom: 4px;
+    }
+    .texto-atendimento {
+        margin-bottom: 45px;
+    }
+}
