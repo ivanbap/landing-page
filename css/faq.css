@@ -25,7 +25,7 @@
     margin-bottom: 40px;
 }
 
-.faq {
+/*.faq {
     display: flex;
     .faq-item {
         padding: 20px 40px;
@@ -41,4 +41,59 @@
     .faq-item p {
         max-width: 75ch;
     }
+}*/
+
+/* O Botão da Pergunta */
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #fff;
+}
+
+/* O Painel da Resposta (Invisível por padrão) */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: min-height .4s ease-out; /* Aqui acontece a mágica da extensão */
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.faq-answer p {
+  color: #555;
+}
+
+/* Classe que o JavaScript vai adicionar ao clicar */
+.faq-item.active .faq-answer {
+  max-height: 200px; /* Um valor alto o suficiente para o conteúdo */
+  margin-top: 0px;
+  padding: 0px 40px 20px 40px;
+}
+
+.faq-item.active .icon {
+  transform: rotate(45deg); /* Gira o + para virar um x */
+}
+
+.faq-item.active .faq-question {
+    border-radius: 10px 10px 0px 0px;
+    transition: background 0.3s ease;
 }
