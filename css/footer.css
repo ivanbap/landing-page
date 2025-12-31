@@ -5,12 +5,12 @@
 .footer {
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 80px;
+    padding: 60px 0px;
     color: #fff;
     display: flex;
     grid-template-rows: 1fr 1fr 1fr;
-    padding-top: 80px;
     gap: 100px;
+    align-items: center;
 }
 
 
@@ -25,7 +25,8 @@
 }
 
 .atendimento {
-    margin-top: 20px;
+        max-width: 40ch;
+
     .info-atendimento {
         font-size: 18px;
         line-height: 1.125;
@@ -35,5 +36,66 @@
     }
     .texto-atendimento {
         margin-bottom: 45px;
+        font-size: 14px;
+        line-height: 1.125;
+        font-weight: 300;
+        font-family: 'Poppins';
+    }
+}
+
+.texto-info {
+        font-size: 14px;
+        line-height: 1.125;
+        font-weight: 300;
+        font-family: 'Poppins';
+}
+
+.whats-info {
+    margin-bottom: 20px;
+}
+
+.whats-info {
+    a {
+        color: #fff;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+}
+.insta-info {
+    a {
+        color: #fff;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        padding-top: 60px;
+        .contato {
+            margin: 0 auto;
+        }
+        .titulo-contato {
+            font-size: 48px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .texto-info {
+            font-size: 14px;
+        }
+        .atendimento {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 0px;
+            p {
+                text-align: center;
+                max-width: 200px;
+            }
+        }
     }
 }
