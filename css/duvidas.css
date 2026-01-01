@@ -6,29 +6,23 @@
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 100px;
+    box-sizing: border-box;
 }
 
-.titulo-duvidas {
-    padding-top: 60px;
-    text-align: center;
-    margin-bottom: 60px;
-    color: #fff;    
-}
 .itens-duvidas {
+    padding: 0 40px;
     ul {
     list-style: none; /* Remove as bolinhas padrão */
-    padding-left: 0;   /* Remove o recuo padrão se necessário */
     }
-
     ul li {
     position: relative;
-    padding-left: 50px; /* Abre espaço para o retângulo à esquerda */
-    margin-bottom: 10px;
+    padding-left: 40px; /* Abre espaço para o retângulo à esquerda */
+    margin-bottom: 20px;
     color: #fff;
     font-size: 24px;
     line-height: 1.125;
     font-family: 'Poppins';
-    font-weight: 100;
+    font-weight: 300;
     }
 
     ul li::before {
@@ -40,7 +34,41 @@
     
     /* Suas dimensões específicas */
     width: 24px;
-    height: 1px;
+    height: 0.15rem;
     background-color: #fff; /* Cor da linha */
+    }
+}
+
+@media (max-width: 1000px) {
+    .container-duvidas {
+        padding-bottom: 60px;
+    }
+    .itens-duvidas {
+            ul li {
+            padding-left: 40px; /* Abre espaço para o retângulo à esquerda */
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+    ul li::before {
+        width: 20px;
+        height: 0.15rem;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .container-duvidas {
+        padding-bottom: 40px;
+    }
+    .itens-duvidas {
+            ul li {
+            padding-left: 40px; /* Abre espaço para o retângulo à esquerda */
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+    ul li::before {
+        width: 20px;
+        height: 0.15rem;
+        }
     }
 }
