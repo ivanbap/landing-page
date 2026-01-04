@@ -1,61 +1,38 @@
 .footer-bg {
     background-color: #000;
 }
-
 .footer {
     max-width: 1280px;
     margin: 0 auto;
     padding: 60px 40px;
     color: #fff;
     display: flex;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     gap: 100px;
     align-items: start;
 }
-
-
+.contato {
+    align-items: center;
+}
 .titulo-contato {
     margin-bottom: 40px;
-    color: #fff;
     font-family: 'Roboto';
     font-size: 48px;
     line-height: 1.125;
     font-style: italic;
     font-weight: 100;
 }
-
-.atendimento {
-        max-width: 40ch;
-        margin-top: 8px;
-    .info-atendimento {
-        font-size: 18px;
-        line-height: 1.125;
-        font-family: 'Poppins';
-        font-weight: 300;
-        margin-bottom: 4px;
-    }
-    .texto-atendimento {
-        margin-bottom: 45px;
-        font-size: 14px;
-        line-height: 1.125;
-        font-weight: 300;
-        font-family: 'Poppins';
-    }
-}
-
 .texto-info {
-        font-size: 14px;
-        line-height: 1.125;
-        font-weight: 300;
-        font-family: 'Poppins';
-        text-align: start;
+    font-size: 14px;
+    line-height: 1.125;
+    font-weight: 300;
+    font-family: 'Poppins';
+    text-align: start;
 }
-
 .whats-info {
     margin-bottom: 20px;
 }
-
-.whats-info {
+.whats-info, .insta-info {
     a {
         color: #fff;
         display: flex;
@@ -63,15 +40,26 @@
         align-items: center;
     }
 }
-.insta-info {
-    a {
-        color: #fff;
-        display: flex;
-        gap: 10px;
-        align-items: center;
+.atendimento {
+    .info-atendimento {
+        font-size: 20px;
+        line-height: 1.125;
+        font-family: 'Poppins';
+        font-weight: 400;
+        margin-bottom: 4px;
+    }
+    .texto-atendimento, .texto-atendimento1 {
+        color: #d8d8d8;
+        font-size: 14px;
+        line-height: 1.125;
+        font-weight: 300;
+        font-family: 'Poppins';
+        max-width: 40ch;
+    }
+    .texto-atendimento1 {
+        margin-bottom: 40px;
     }
 }
-
 .mapbox iframe{
     width: 360px;
     height: 240px;
@@ -82,51 +70,39 @@
     .footer {
         display: grid;
         grid-template-columns: 1fr 1fr; 
-        gap: 0px 20px; /* 40px entre linhas, 20px entre colunas */
+        gap: 40px 20px;
         padding: 60px 20px;
         align-items: baseline;
-        height: 600px;
     }
-    /* 2. Regras individuais (FORA das chaves da .footer) */
     .contato, .atendimento {
         margin: 0 auto;
-        text-align: center; /* Centraliza o texto para mobile */
+        text-align: center;
     }
     .titulo-contato {
-        font-size: 32px;
         margin-bottom: 30px;
     }
-    /* 3. A mágica para o mapa ocupar a linha inteira */
     .mapbox {
-        margin-top: 40px;
         grid-column: 1 / span 2; 
     }
-    /* 4. Faz o iframe ocupar toda a largura da div mapbox */
     .mapbox iframe {
         width: 100% !important;
-        border-radius: 10px;
     }
 }
 
 @media (max-width: 700px) {
     .footer {
-        /* Muda de 2 colunas para apenas 1 */
         grid-template-columns: 1fr; 
         padding: 40px 20px;
-        gap: 60px;
-        height: 800px;
+        gap: 20px;  
     }
     .mapbox, .contato, .atendimento {
         grid-column: 1; 
         text-align: center;
     }
-    .titulo-contato {
-        font-size: 28px; /* Diminui um pouco o título para telas pequenas */
-    }
-    .mapbox {
-        margin-top: -50px;
+    .contato, .atendimento {
+        margin-bottom: 30px;
     }
     .mapbox iframe {
-        height: 250px; /* Reduz a altura do mapa em celulares pequenos */
+        height: 200px;
     }
 }
