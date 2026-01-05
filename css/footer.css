@@ -89,20 +89,25 @@
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
     .footer {
         grid-template-columns: 1fr; 
         padding: 40px 20px;
-        gap: 20px;  
-    }
+        }
     .mapbox, .contato, .atendimento {
         grid-column: 1; 
         text-align: center;
     }
-    .contato, .atendimento {
-        margin-bottom: 30px;
-    }
     .mapbox iframe {
         height: 200px;
     }
+    .footer .insta-info::after {
+        content: "";
+        display: block;
+        width: 100% +100px;
+        margin: 0 auto;
+        background: #696969;
+        height: 1px;
+        margin-top: 40px;
+}
 }
