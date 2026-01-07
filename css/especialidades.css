@@ -11,23 +11,30 @@
 
 .especialidades-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     row-gap: 40px;
     padding: 0 30px;    
-    align-items: center;
+    align-items: stretch;
 }
 
 .item {
     border-radius: 10px;
     width: 100%;
-    height: 100%;
     padding: 20px 30px;
     background-color: #fff;
-    h3 {
-        margin-bottom: 60px;
-    }
+    display: flex;
+    flex-direction: column;
 }
+
+.item h3 {
+    margin-bottom: 40px; 
+}
+.item p {
+    margin-top: auto; 
+    margin-bottom: 0;
+}
+
 @media (max-width: 1000px) {
     .container-especialidades {
         padding-bottom: 60px;
@@ -56,5 +63,5 @@
     }
     .container-especialidades {
         padding-bottom: 40px;
-    }
+    }   
 }

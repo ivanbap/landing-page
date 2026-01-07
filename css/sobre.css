@@ -15,7 +15,6 @@
     gap: 120px;
     max-width: 103ch;
     color: #fff;
-    align-items: center;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -24,6 +23,8 @@
     line-height: 1.125;
     font-family: 'Poppins';
     font-weight: 300;
+    text-align: justify;
+    align-self: center;
 }
 
 @media (max-width: 1000px) {
