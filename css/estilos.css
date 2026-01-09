@@ -4,10 +4,12 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
 ul {
     margin: 0px;
     padding: 0px;
 }
+
 a {
     text-decoration: none;
 }
@@ -32,6 +34,7 @@ img {
     text-align: center;
     margin-bottom: 60px;
 }
+
 .titulo-medio1 {
     padding: 0 20px;
 }
@@ -43,9 +46,11 @@ img {
 .branco {
     color: #fff;
 }
+
 .preto {
     color: #000;
 }
+
 .roxo {
     color: #481C1E;
 }
@@ -56,6 +61,7 @@ img {
     padding-top: 40px;
     margin-bottom: 40px;
 }
+
 }
 @media (max-width: 700px) {
     .titulo-medio,.titulo-medio1 {

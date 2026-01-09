@@ -1,26 +1,40 @@
+.home {
+    background-color: #fff;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
 .header {
     margin: 0px auto;
     max-width: 1200px;
+    width: 100%;
+    position: relative; /* Necessário para o menu mobile se posicionar */
 }
 
+/* --- MENU DESKTOP --- */
 .header-menu {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
-    font-family: 'Poppins';
+    gap: 60px;
+    font-family: 'Poppins', sans-serif;
     font-style: italic;
     margin-top: 40px;
+    padding: 0 20px;
     list-style: none;
 }
+
 .header-menu a {
     font-size: 16px;
     padding: 16px 0px;
     display: inline-block;
     color: #000;
+    text-decoration: none;
     position: relative;
 }
 
+/* Efeito da linha embaixo no Hover */
 .header-menu a:after {
     content: "";
     display: block;
@@ -31,104 +45,156 @@
     transition: 0.3s;
     position: absolute;
 }
+
 .header-menu a:hover:after {
     width: 100%;
 }
 
-.info-home {
-    padding-top: 400px;
+/* Botão hambúrguer (escondido por padrão) */
+.btn-mobile {
+    display: none;
 }
+
+/* Menu Mobile (escondido por padrão) */
+.mobile-menu {
+    display: none;
+}
+
+/* --- CONTEÚDO CENTRAL DA HOME --- */
+.info-home {
+    flex: 1; /* Faz ocupar o espaço restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Centraliza verticalmente */
+    align-items: center;
+    padding: 100px 20px;
+}
+
 .titulo-home {
     text-align: center;
     margin-bottom: 60px;
     font-size: 72px;
     line-height: 1.125;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-style: italic;
     font-weight: 200;
-    padding: 0 30px;
 }
 
-.home {
-    background-color: #fff;
-}
-
+/* --- BOTÃO AGENDAR --- */
 .btn {
     text-align: center;
-    padding-bottom: 100px;
-    a {
+}
+
+.btn-home {
     font-size: 20px;
     padding: 24px 60px;
     font-weight: 300;
     font-style: italic;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     color: #000000;
+    text-decoration: none;
     border-radius: 10px;
+    display: inline-block;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    }
-    
-    a:hover {
-     /* Aumenta o desfoque e o deslocamento para parecer que subiu */
-    box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.4);
-    transform: translateY(-2px); 
-    }
-
-    a:active {
-    /* Diminui a sombra para parecer que foi clicado */
-    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-    transform: translateY(0);
-    }
+    background-color: #fff;
 }
 
+.btn-home:hover {
+    box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px); 
+}
+
+.btn-home:active {
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+/* --- MEDIA QUERIES (800px) --- */
 @media (max-width: 800px) {
     .header-menu {
         gap: 20px;
     }
-    .header-menu a {
-        margin: 0 20px;
-        font-size: 14px;
-    }
     .titulo-home {
         font-size: 64px;
-        margin-bottom: 40px;
-    }
-    .btn{
-        padding-bottom: 60px;
-        a {
-        font-size: 16px;
-        padding: 16px 40px;
-        }
     }
 }
 
+/* --- MEDIA QUERIES (500px - FOCO NO MENU) --- */
 @media (max-width: 500px) {
+    .home {
+        min-height: 90vh; 
+    }
     .header-menu {
-        display: flex;
         justify-content: flex-end;
-        padding: 0 20px;
-        li {
-            display: none;
-        }
+        padding-right: 20px;
+        margin-top: 20px;
     }
+
+    /* Esconde links do desktop */
+    .header-menu li {
+        display: none;
+    }
+
+    /* Mostra e estiliza o botão mobile */
+    .btn-mobile {
+        display: block;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 20px;
+        color: #000;
+    }
+
+    /* Estiliza o menu que abre */
+    .mobile-menu {
+        display: none; /* JS vai trocar para 'block' */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        z-index: 1000;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
     .mobile-menu.active {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block;
     }
-    .header-menu a {
-        margin: 0 20px;
-        font-size: 14px;
+
+    .mobile-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
+
+    .mobile-list li a {
+        display: block;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #000;
+        border-bottom: 1px solid #eee;
+        font-family: 'Poppins', sans-serif;
+        font-style: italic;
+    }
+
+    /* Ajustes de texto para telas pequenas */
     .titulo-home {
-        font-size: 56px;
-        margin-bottom: 30px;
+        font-size: 48px;
+        margin-bottom: 40px;
     }
-    .btn{
-        padding-bottom: 60px;
-        a {
-        font-size: 14px;
-        padding: 16px 30px;
-        }
+
+    .btn-home {
+        font-size: 16px;
+        padding: 16px 40px;
+    }
+    .info-home {
+        padding-bottom: 60px; /* Um pouco menos de recuo no celular */
+    }
+
+    .titulo-home {
+            font-size: 48px;
+            margin-bottom: 20px;
     }
 }

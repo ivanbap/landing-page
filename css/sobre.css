@@ -1,9 +1,12 @@
+/* --- SEÇÃO SOBRE --- */
 .sobre {
     background-color: #481C1E;
+    /* Adicionado um padding no topo para o título não colar no final da seção anterior */
+    padding-top: 80px; 
 }
 
 .container-sobre {
-    max-width: 1260px;
+    max-width: 1200px; /* Alinhado com o padrão do seu header */
     margin: 0 auto;
     padding-bottom: 100px;
     box-sizing: border-box;
@@ -11,47 +14,74 @@
 
 .colunas-sobre {
     display: grid;
-    grid-template-columns: 60% 40%;
-    gap: 120px;
-    max-width: 103ch;
+    /* Ajustado para 1fr 1fr para melhor equilíbrio entre foto e texto biográfico */
+    grid-template-columns: 60% 40%; 
+    gap: 80px;
     color: #fff;
     padding-left: 30px;
     padding-right: 30px;
-}
-.texto-sobre{
-    font-size: 18px;
-    line-height: 1.125;
-    font-family: 'Poppins';
-    font-weight: 300;
-    text-align: justify;
-    align-self: center;
+    align-items: center; /* Centraliza o texto verticalmente em relação à foto */
 }
 
+.colunas-sobre img {
+    max-width: 100%; /* Impede que a imagem saia da tela no mobile */
+    height: auto;    /* Mantém a proporção da foto */
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px; /* Opcional: um toque sutil de acabamento */
+}
+
+.texto-sobre {
+    font-size: 18px;
+    /* Aumentei o line-height para 1.5, que é o padrão ouro de leitura para textos longos */
+    line-height: 1.6; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    text-align: justify;
+}
+
+/* --- RESPONSIVIDADE (TABLETS E TELAS MÉDIAS) --- */
 @media (max-width: 1000px) {
-    .titulo-sobre {
-        padding-top: 40px;
-        margin-bottom: 40px;
-    }
-    .colunas-sobre {
-        display: grid;
-        grid-template-columns: 1fr;
-        margin: 0 auto;
-        gap: 40px;
-        img {
-            margin: 0 auto;
-        }
-    }
     .container-sobre {
         padding-bottom: 60px;
     }
+
+    .colunas-sobre {
+        grid-template-columns: 1fr; /* Empilha a foto e o texto */
+        gap: 40px;
+        max-width: 800px; /* Evita que o texto fique largo demais no tablet */
+        margin: 0 auto;
+    }
+
+    .colunas-sobre img {
+        /* No mobile, geralmente a foto da pessoa vem antes do texto */
+        order: -1; 
+        max-width: 70%; /* Foto não precisa ocupar a tela inteira do tablet */
+    }
+
     .texto-sobre {
-        text-align: justify;
-        font-size: 16px;
+        font-size: 17px;
     }
 }
+
+/* --- RESPONSIVIDADE (CELULARES - 500px) --- */
 @media (max-width: 500px) {
+    .sobre {
+        padding-top: 40px;
+    }
+
+    .colunas-sobre {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .colunas-sobre img {
+        max-width: 100%; /* Na tela pequena, a foto aproveita mais espaço */
+    }
+
     .texto-sobre {
-        text-align: justify;
-        font-size: 14px;
+        font-size: 15px; /* Tamanho ideal para leitura em smartphones */
+        line-height: 1.5;
+        text-align: left; /* Justificado em telas muito pequenas às vezes cria buracos no texto */
     }
 }

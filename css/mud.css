@@ -1,95 +1,124 @@
+/* --- SEÇÃO MUD40+ --- */
 .mud {
     background-color: #d9d9d9;
+    padding-top: 80px; /* Adicionado para manter o padrão de respiro */
 }
+
 .container-mud {
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 100px;
     box-sizing: border-box;
 }
+
 .colunas-mud {
     display: grid;
-    grid-template-columns: 50% 50%;
-    max-width: 100ch;
-    gap: 100px;
+    /* 1fr 1fr garante que as colunas dividam o espaço igualmente */
+    grid-template-columns: 1fr 1fr;
+    gap: 80px; /* Gap consistente com a seção SOBRE */
     color: #000;
     padding: 0 30px;
+    align-items: center; /* Centraliza verticalmente texto e imagem */
 }
 
-.mud-conteudo{
-    align-content: end; 
-    margin-bottom: 12px;
+.colunas-mud img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
 }
 
-.mud-conteudo p{
-    margin-bottom: 60px;
+.mud-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.texto-mud{
+.texto-mud {
     font-size: 18px;
-    line-height: 24px;
-    font-family: 'Poppins';
+    line-height: 1.6; /* Melhorado para legibilidade */
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
     text-align: justify;
+    margin-bottom: 40px; /* Espaço entre texto e botão */
 }
 
+/* --- BOTÃO MUD40+ --- */
 .btn-mud {
     font-size: 18px;
     color: #000;
-    padding: 12px 40px;
-    border-radius: 5px;
-    font-family: 'Poppins';
+    padding: 16px 40px;
+    border-radius: 8px; /* Arredondado para seguir o padrão da Home */
+    font-family: 'Roboto', sans-serif; /* Consistência com o botão da Home */
     font-weight: 300;
+    font-style: italic;
+    text-decoration: none;
+    display: inline-block;
+    width: fit-content; /* Faz o fundo do botão envolver apenas o texto */
+    background-color: #fff; /* Fundo branco para destacar no cinza */
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 .btn-mud:hover {
-     /* Aumenta o desfoque e o deslocamento para parecer que subiu */
     box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.4);
     transform: translateY(-2px); 
 }
 
 .btn-mud:active {
-    /* Diminui a sombra para parecer que foi clicado */
     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
     transform: translateY(0);
 }
 
+/* --- RESPONSIVIDADE --- */
+
 @media (max-width: 1000px) {
-    .container-mud {
-        padding-bottom: 60px;
-    }
     .colunas-mud {
         gap: 40px;
     }
+    
     .texto-mud {
-        font-size: 16px;
+        font-size: 17px;
     }
 }
 
 @media (max-width: 800px) {
     .container-mud {
-        max-width: 500px;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
     }
+
     .colunas-mud {
-        gap: 20px;
-        display: grid;
-        grid-template-columns: 1fr;
-        img {
-            margin: 0 auto;
-        }
-        .mud-conteudo{
-            text-align: center;
-            p {
-                margin-bottom: 40px;
-                text-align: start;
-            }
-            .btn-mud {
-                font-size: 14px;
-                color: #000;
-                padding: 12px 20px;
-            }
-        }
+        grid-template-columns: 1fr; /* Empilha o conteúdo */
+        text-align: center;
+    }
+
+    .colunas-mud img {
+        margin: 0 auto;
+        max-width: 80%; /* Evita que a imagem fique muito massiva no mobile */
+    }
+
+    .mud-conteudo {
+        align-items: center; /* Centraliza o botão no mobile */
+    }
+
+    .texto-mud {
+        text-align: center; /* Texto centralizado fica melhor em colunas únicas */
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .btn-mud {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .mud {
+        padding-top: 40px;
+    }
+
+    .colunas-mud img {
+        max-width: 100%;
     }
 }

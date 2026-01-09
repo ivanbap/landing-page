@@ -1,74 +1,94 @@
+/* --- SEÇÃO DÚVIDAS (COMO FUNCIONA A CONSULTA) --- */
 .duvidas {
     background-color: #481C1E;
+    padding-top: 80px; /* Mantendo o padrão de respiro do site */
 }
 
 .container-duvidas {
-    max-width: 1280px;
+    max-width: 1200px; /* Padronizado com o restante do site */
     margin: 0 auto;
     padding-bottom: 100px;
     box-sizing: border-box;
 }
 
 .itens-duvidas {
-    padding: 0 15px;
-    ul {
-    list-style: none; /* Remove as bolinhas padrão */
-    }
-    ul li {
-    position: relative;
-    padding-left: 40px; /* Abre espaço para o retângulo à esquerda */
-    margin-bottom: 20px;
-    color: #fff;
-    font-size: 24px;
-    line-height: 1.125;
-    font-family: 'Poppins';
-    font-weight: 300;
-    }
-
-    ul li::before {
-    content: "";       /* Necessário para o pseudo-elemento aparecer */
-    position: absolute;
-    left: 0;
-    top: 50%;          /* Alinha ao centro da linha de texto */
-    transform: translateY(-50%); /* Ajuste fino para centralização vertical */
-    
-    /* Suas dimensões específicas */
-    width: 24px;
-    height: 0.15rem;
-    background-color: #fff; /* Cor da linha */
-    }
+    padding: 0 30px;
 }
 
+.itens-duvidas ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    /* No desktop, divide a lista em 2 colunas para melhor aproveitamento de espaço */
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px 60px; /* Espaçamento entre colunas e linhas */
+}
+
+.itens-duvidas ul li {
+    position: relative;
+    padding-left: 45px; /* Espaço para o marcador */
+    margin-bottom: 25px;
+    color: #fff;
+    font-size: 22px; /* Ajuste leve para equilíbrio visual */
+    line-height: 1.3; /* Aumentado para não colar as linhas se o texto quebrar */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    align-self: start;
+}
+
+/* O marcador (traço horizontal) */
+.itens-duvidas ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em; /* Alinha com a primeira linha do texto de forma mais precisa */
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+/* Efeito sutil: o traço cresce levemente ao passar o mouse */
+.itens-duvidas ul li:hover::before {
+    width: 30px;
+}
+
+/* --- RESPONSIVIDADE --- */
+
 @media (max-width: 1000px) {
-    .container-duvidas {
-        padding-bottom: 60px;
+    .itens-duvidas ul {
+        grid-template-columns: 1fr; /* Volta para uma coluna em tablets */
+        max-width: 700px; /* Centraliza a lista na tela */
+        margin: 0 auto;
     }
-    .itens-duvidas {
-            ul li {
-            padding-left: 40px; /* Abre espaço para o retângulo à esquerda */
-            margin-bottom: 20px;
-            font-size: 20px;
-        }
-    ul li::before {
-        width: 20px;
-        height: 0.15rem;
-        }
+    .itens-duvidas ul li {
+        font-size: 20px;
+        margin-bottom: 20px;
     }
 }
 
 @media (max-width: 700px) {
     .container-duvidas {
-        padding-bottom: 40px;
+        padding-bottom: 60px;
     }
+
+    .itens-duvidas ul li {
+        font-size: 18px;
+        padding-left: 35px;
+    }
+
+    .itens-duvidas ul li::before {
+        width: 18px;
+    }
+}
+
+@media (max-width: 500px) {
+    .duvidas {
+        padding-top: 40px;
+    }
+    
     .itens-duvidas {
-            ul li {
-            padding-left: 40px; /* Abre espaço para o retângulo à esquerda */
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-    ul li::before {
-        width: 20px;
-        height: 0.15rem;
-        }
+        padding: 0 20px;
     }
 }
