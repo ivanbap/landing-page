@@ -22,7 +22,7 @@ img {
     max-width: 100%;
 }
 
-.titulo-medio {
+.titulo-medio,.titulo-medio1 {
     font-size: 64px;
     line-height: 1.125;
     font-family: "Roboto";
@@ -31,6 +31,9 @@ img {
     padding-top: 60px;
     text-align: center;
     margin-bottom: 60px;
+}
+.titulo-medio1 {
+    padding: 0 20px;
 }
 
 .pad{
@@ -48,14 +51,14 @@ img {
 }
 
 @media (max-width: 1000px) {
-    .titulo-medio {
+    .titulo-medio,.titulo-medio1 {
     font-size: 56px;
     padding-top: 40px;
     margin-bottom: 40px;
 }
 }
 @media (max-width: 700px) {
-    .titulo-medio {
+    .titulo-medio,.titulo-medio1 {
     font-size: 48px;
     padding-top: 30px;
 }

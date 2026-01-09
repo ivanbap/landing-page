@@ -11,16 +11,8 @@
     font-family: 'Poppins';
     font-style: italic;
     margin-top: 40px;
-    margin-bottom: 500px;
     list-style: none;
-    button {
-        display: none;
-    }
 }
-.mobile-menu {
-    display: none;
-}
-
 .header-menu a {
     font-size: 16px;
     padding: 16px 0px;
@@ -41,6 +33,10 @@
 }
 .header-menu a:hover:after {
     width: 100%;
+}
+
+.info-home {
+    padding-top: 400px;
 }
 .titulo-home {
     text-align: center;
@@ -88,7 +84,6 @@
 @media (max-width: 800px) {
     .header-menu {
         gap: 20px;
-        margin-bottom: 300px;
     }
     .header-menu a {
         margin: 0 20px;
@@ -109,19 +104,11 @@
 
 @media (max-width: 500px) {
     .header-menu {
-        margin-bottom: 300px;
         display: flex;
         justify-content: flex-end;
-        padding: 0 30px;
+        padding: 0 20px;
         li {
             display: none;
-        }
-        .btn-mobile{
-            display: block;
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
-            font-size: 1rem;
         }
     }
     .mobile-menu.active {
