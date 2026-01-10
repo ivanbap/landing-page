@@ -1,94 +1,89 @@
-/* --- SEÇÃO DÚVIDAS (COMO FUNCIONA A CONSULTA) --- */
+/* --- SEÇÃO DÚVIDAS (ESTILO CARD DINÂMICO) --- */
 .duvidas {
     background-color: #481C1E;
-    padding-top: 80px; /* Mantendo o padrão de respiro do site */
+    padding: 80px 20px;
 }
 
 .container-duvidas {
-    max-width: 1200px; /* Padronizado com o restante do site */
+    max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 100px;
-    box-sizing: border-box;
+    text-align: center;
 }
 
-.itens-duvidas {
-    padding: 0 30px;
-}
-
-.itens-duvidas ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.fluxo-consulta {
     display: grid;
-    /* No desktop, divide a lista em 2 colunas para melhor aproveitamento de espaço */
-    grid-template-columns: 1fr 1fr; 
-    gap: 10px 60px; /* Espaçamento entre colunas e linhas */
+    /* 3 colunas no desktop para reduzir a altura da seção */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+    /* Contador para os números automáticos */
+    counter-reset: passo;
 }
 
-.itens-duvidas ul li {
+.item-consulta {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 15px;
     position: relative;
-    padding-left: 45px; /* Espaço para o marcador */
-    margin-bottom: 25px;
-    color: #fff;
-    font-size: 22px; /* Ajuste leve para equilíbrio visual */
-    line-height: 1.3; /* Aumentado para não colar as linhas se o texto quebrar */
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    align-self: start;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-/* O marcador (traço horizontal) */
-.itens-duvidas ul li::before {
-    content: "";
+/* Número estilizado ao fundo */
+.item-consulta::before {
+    counter-increment: passo;
+    content: counter(passo);
     position: absolute;
-    left: 0;
-    top: 0.7em; /* Alinha com a primeira linha do texto de forma mais precisa */
-    width: 24px;
-    height: 2px;
-    background-color: #fff;
-    transition: width 0.3s ease;
+    top: -10px;
+    left: 10px;
+    font-size: 80px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.05); /* Número bem discreto */
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;
 }
 
-/* Efeito sutil: o traço cresce levemente ao passar o mouse */
-.itens-duvidas ul li:hover::before {
-    width: 30px;
+.item-consulta h3 {
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    z-index: 1; /* Fica acima do número */
+}
+
+/* Efeito Hover */
+.item-consulta:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.item-consulta:hover::before {
+    color: rgba(255, 255, 255, 0.15);
+    top: 5px;
 }
 
 /* --- RESPONSIVIDADE --- */
-
-@media (max-width: 1000px) {
-    .itens-duvidas ul {
-        grid-template-columns: 1fr; /* Volta para uma coluna em tablets */
-        max-width: 700px; /* Centraliza a lista na tela */
-        margin: 0 auto;
-    }
-    .itens-duvidas ul li {
-        font-size: 20px;
-        margin-bottom: 20px;
+@media (max-width: 1024px) {
+    .fluxo-consulta {
+        grid-template-columns: 1fr 1fr; /* 2 colunas em tablets */
     }
 }
 
-@media (max-width: 700px) {
-    .container-duvidas {
-        padding-bottom: 60px;
-    }
-
-    .itens-duvidas ul li {
-        font-size: 18px;
-        padding-left: 35px;
-    }
-
-    .itens-duvidas ul li::before {
-        width: 18px;
-    }
-}
-
-@media (max-width: 500px) {
-    .duvidas {
-        padding-top: 40px;
+@media (max-width: 600px) {
+    .fluxo-consulta {
+        grid-template-columns: 1fr; /* 1 coluna no celular */
+        gap: 15px;
     }
     
-    .itens-duvidas {
-        padding: 0 20px;
+    .item-consulta {
+        padding: 30px 20px;
+        text-align: left;
+        justify-content: flex-start;
     }
 }
