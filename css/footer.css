@@ -23,11 +23,11 @@
     font-weight: 100;
 }
 
-.whats-info, .insta-info {
+.whats-info, .insta-info, .tiktok-info {
     margin-bottom: 25px;
 }
 
-.whats-info a, .insta-info a {
+.whats-info a, .insta-info a, .tiktok-info a {
     color: #fff;
     text-decoration: none;
     display: flex;
@@ -36,7 +36,7 @@
     transition: opacity 0.3s;
 }
 
-.whats-info a:hover, .insta-info a:hover {
+.whats-info a:hover, .insta-info a:hover, .tiktok-info a:hover {
     opacity: 0.8;
 }
 
@@ -94,6 +94,9 @@
         max-width: 100%; /* Mapa expande no tablet */
         height: 300px;
     }
+    .contato, .atendimento {
+        margin: 0 auto;
+    }
 }
 
 /* --- RESPONSIVIDADE (CELULAR) --- */
@@ -114,7 +117,7 @@
         font-size: 36px;
     }
 
-    .whats-info a, .insta-info a {
+    .whats-info a, .insta-info a, .tiktok-info a {
         flex-direction: column; /* Ícone em cima do texto no celular */
         gap: 8px;
         text-align: center;
@@ -129,7 +132,7 @@
     }
 
     /* Linha divisória sutil entre seções no mobile */
-    .insta-info::after {
+    .tiktok-info::after {
         content: "";
         display: block;
         width: 100px;
