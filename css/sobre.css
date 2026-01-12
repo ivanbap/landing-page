@@ -1,6 +1,6 @@
 /* --- SEÇÃO SOBRE --- */
 .sobre {
-    background-color: #481C1E;
+    background-color: #d9d9d9;
     /* Adicionado um padding no topo para o título não colar no final da seção anterior */
     padding-top: 80px; 
 }
@@ -38,6 +38,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     text-align: justify;
+    color: #000;
 }
 
 /* --- RESPONSIVIDADE (TABLETS E TELAS MÉDIAS) --- */

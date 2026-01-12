@@ -1,6 +1,6 @@
 /* --- SEÇÃO MUD40+ --- */
 .mud {
-    background-color: #d9d9d9;
+    background-color: #481C1E;
     padding-top: 80px; /* Adicionado para manter o padrão de respiro */
 }
 
@@ -16,7 +16,7 @@
     /* 1fr 1fr garante que as colunas dividam o espaço igualmente */
     grid-template-columns: 1fr 1fr;
     gap: 80px; /* Gap consistente com a seção SOBRE */
-    color: #000;
+    color: #fff;
     padding: 0 30px;
     align-items: center; /* Centraliza verticalmente texto e imagem */
 }
