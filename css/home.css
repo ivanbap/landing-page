@@ -6,7 +6,7 @@
 }
 
 .header {
-    margin: 0px auto;
+    margin: 0 auto;
     max-width: 1200px;
     width: 100%;
     position: relative; /* Necessário para o menu mobile se posicionar */
@@ -20,14 +20,12 @@
     gap: 60px;
     font-family: 'Poppins', sans-serif;
     font-style: italic;
-    margin-top: 40px;
-    padding: 0 20px;
     list-style: none;
+    margin-top: 60px;
 }
 
 .header-menu a {
     font-size: 16px;
-    padding: 16px 0px;
     display: inline-block;
     color: #000;
     text-decoration: none;
@@ -48,15 +46,9 @@
 
 .header-menu a:hover:after {
     width: 100%;
-}
-
-/* Botão hambúrguer (escondido por padrão) */
-.btn-mobile {
-    display: none;
-}
-
+}   
 /* Menu Mobile (escondido por padrão) */
-.mobile-menu {
+.mobile-menu,.btn-mobile {
     display: none;
 }
 
@@ -113,7 +105,8 @@
 /* --- MEDIA QUERIES (800px) --- */
 @media (max-width: 800px) {
     .header-menu {
-        gap: 20px;
+        gap: 40px;
+        padding: 0 20px;
     }
     .titulo-home {
         font-size: 64px;
@@ -121,81 +114,76 @@
 }
 
 /* --- MEDIA QUERIES (500px - FOCO NO MENU) --- */
-@media (max-width: 500px) {
-    .home {
-        min-height: 90vh; 
-    }
-    .header-menu {
-        justify-content: flex-start;
-        padding-right: 20px;
-        margin-top: 20px;
-    }
+    @media (max-width: 500px) {
+        .header-menu {
+            justify-content: flex-start;
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+        /* Esconde links do desktop */
+        .header-menu li {
+            display: none;
+        }
+        /* Mostra e estiliza o botão mobile */
+        .btn-mobile {
+            display: block;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 20px;
+            color: #000;
+        }
 
-    /* Esconde links do desktop */
-    .header-menu li {
-        display: none;
-    }
+        /* Estiliza o menu que abre */
+        .mobile-menu {
+            display: none; /* JS vai trocar para 'block' */
+            position: absolute;
+            margin-bottom: 10px;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            z-index: 1000;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            font-family: 'Roboto';
+        }
 
-    /* Mostra e estiliza o botão mobile */
-    .btn-mobile {
-        display: block;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        font-size: 20px;
-        color: #000;
-    }
+        .mobile-menu.active {
+            display: block;
+        }
 
-    /* Estiliza o menu que abre */
-    .mobile-menu {
-        display: none; /* JS vai trocar para 'block' */
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        z-index: 1000;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        font-family: 'Roboto';
-    }
+        .mobile-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .mobile-menu.active {
-        display: block;
-    }
+        .mobile-list li a {
+            display: block;
+            padding: 15px 40px;
+            text-decoration: none;
+            color: #000;
+            border-bottom: 1px solid #eee;
+            font-family: 'Poppins', sans-serif;
+            font-style: italic;
+            font-weight: 300;
+        }
 
-    .mobile-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .mobile-list li a {
-        display: block;
-        padding: 15px 40px;
-        text-decoration: none;
-        color: #000;
-        border-bottom: 1px solid #eee;
-        font-family: 'Poppins', sans-serif;
-        font-style: italic;
-        font-weight: 300;
-    }
-
-    /* Ajustes de texto para telas pequenas */
-    .titulo-home {
-        font-size: 48px;
-        margin-bottom: 40px;
-    }
-
-    .btn-home {
-        font-size: 16px;
-        padding: 16px 40px;
-    }
-    .info-home {
-        padding-bottom: 60px; /* Um pouco menos de recuo no celular */
-    }
-
-    .titulo-home {
+        /* Ajustes de texto para telas pequenas */
+        .titulo-home {
             font-size: 48px;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn-home {
+            font-size: 16px;
+            padding: 16px 40px;
+        }
+        .info-home {
+            padding-bottom: 60px; /* Um pouco menos de recuo no celular */
+        }
+
+        .titulo-home {
+                font-size: 48px;
+                margin-bottom: 20px;
+        }
     }
-}
