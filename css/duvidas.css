@@ -28,7 +28,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    min-height: 180px;
+    height: 200px;
 }
 
 /* O Ícone substituindo o número ::before */
@@ -84,5 +84,6 @@
     .item-consulta {
         padding: 30px 20px;
         text-align: center;
+        height: 120px;
     }
 }
