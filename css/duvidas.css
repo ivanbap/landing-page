@@ -1,4 +1,4 @@
-/* --- SEÇÃO DÚVIDAS (ESTILO CARD DINÂMICO) --- */
+/* --- SEÇÃO DÚVIDAS (ESTILO CARD COM ÍCONE AO FUNDO) --- */
 .duvidas {
     background-color: #481C1E;
     padding: 80px 20px;
@@ -12,39 +12,37 @@
 
 .fluxo-consulta {
     display: grid;
-    /* 3 colunas no desktop para reduzir a altura da seção */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     margin-top: 50px;
-    /* Contador para os números automáticos */
-    counter-reset: passo;
 }
 
 .item-consulta {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(194, 122, 122, 0.1);
     padding: 40px 30px;
     border-radius: 15px;
-    position: relative;
+    position: relative; /* Mantém como referência para o ícone */
     transition: all 0.4s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    min-height: 180px;
 }
 
-/* Número estilizado ao fundo */
-.item-consulta::before {
-    counter-increment: passo;
-    content: counter(passo);
+/* O Ícone substituindo o número ::before */
+.icone-etapa {
     position: absolute;
-    top: -10px;
-    left: 10px;
-    font-size: 80px;
-    font-weight: 900;
-    color: rgba(255, 255, 255, 0.05); /* Número bem discreto */
-    font-family: 'Poppins', sans-serif;
+    top: 15px;        /* Começa um pouco para fora, como o número */
+    left: 15px;
+    width: 70px;      /* Tamanho grande para parecer marca d'água */
+    opacity: 0.1;     /* Bem discreto igual ao original */
     transition: all 0.4s ease;
+    z-index: 0;
+    pointer-events: none; /* Garante que o clique passe para o card */
+    /* Se o ícone for preto, essa linha o deixa branco/claro */
+    filter: brightness(0) invert(1); 
 }
 
 .item-consulta h3 {
@@ -53,37 +51,38 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     line-height: 1.4;
-    z-index: 1; /* Fica acima do número */
+    z-index: 1; /* Garante que o texto fique na frente do ícone */
+    position: relative;
 }
 
-/* Efeito Hover */
+/* --- EFEITO HOVER (IGUAL AO ORIGINAL) --- */
 .item-consulta:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-5px);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-.item-consulta:hover::before {
-    color: rgba(255, 255, 255, 0.15);
-    top: 5px;
+.item-consulta:hover .icone-etapa {
+    opacity: 0.15;      /* Fica um pouco mais visível no hover */
+    top: 20px;          /* Sobe um pouco, igual o efeito do número original */
+    transform: scale(1.1);
 }
 
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 1024px) {
     .fluxo-consulta {
-        grid-template-columns: 1fr 1fr; /* 2 colunas em tablets */
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 @media (max-width: 600px) {
     .fluxo-consulta {
-        grid-template-columns: 1fr; /* 1 coluna no celular */
+        grid-template-columns: 1fr;
         gap: 15px;
     }
     
     .item-consulta {
         padding: 30px 20px;
-        text-align: left;
-        justify-content: flex-start;
+        text-align: center;
     }
 }
