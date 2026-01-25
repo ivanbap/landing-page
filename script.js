@@ -26,3 +26,23 @@ faqItems.forEach(item => {
     item.classList.toggle('active');
   });
 });
+
+    const observers = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Se o card estiver visível (pelo menos 50% na tela)
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active-mobile');
+            } else {
+                // Remove a classe quando o usuário continua rolando
+                // Assim a animação acontece de novo se ele voltar
+                entry.target.classList.remove('active-mobile');
+            }
+        });
+    }, {
+        threshold: 0.6 // Dispara quando 60% do card aparecer
+    });
+
+    // Seleciona todos os cards de especialidades
+    document.querySelectorAll('.item').forEach(card => {
+        observers.observe(card);
+    });
