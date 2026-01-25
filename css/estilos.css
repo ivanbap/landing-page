@@ -65,7 +65,7 @@ img {
 }
 @media (max-width: 700px) {
     .titulo-medio,.titulo-medio1 {
-    font-size: 48px;
+    font-size: 40px;
     padding-top: 30px;
 }
 }
