@@ -46,3 +46,33 @@ faqItems.forEach(item => {
     document.querySelectorAll('.item').forEach(card => {
         observers.observe(card);
     });
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.7 // Ativa quando 70% do card estiver na tela
+    };
+
+    const observerOptionss = {
+        root: null,
+        // O segredo está aqui: reduzimos a área de detecção para uma faixa 
+        // estreita no centro da tela (entre 40% e 45%)
+        rootMargin: '-40% 0px -45% 0px', 
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Adiciona a classe ao card que está no centro
+                entry.target.classList.add('active-mobile');
+            } else {
+                // Remove dos outros
+                entry.target.classList.remove('active-mobile');
+            }
+        });
+    }, observerOptionss);
+
+    document.querySelectorAll('.item-consulta').forEach(item => {
+        observer.observe(item);
+    });

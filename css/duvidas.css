@@ -1,4 +1,4 @@
-/* --- SEÇÃO DÚVIDAS (ESTILO CARD COM ÍCONE AO FUNDO) --- */
+/* --- SEÇÃO DÚVIDAS --- */
 .duvidas {
     background-color: #481C1E;
     padding: 80px 20px;
@@ -22,7 +22,7 @@
     border: 1px solid rgba(194, 122, 122, 0.1);
     padding: 40px 30px;
     border-radius: 15px;
-    position: relative; /* Mantém como referência para o ícone */
+    position: relative; 
     transition: all 0.4s ease;
     display: flex;
     align-items: center;
@@ -31,17 +31,15 @@
     height: 200px;
 }
 
-/* O Ícone substituindo o número ::before */
 .icone-etapa {
     position: absolute;
-    top: 15px;        /* Começa um pouco para fora, como o número */
+    top: 15px;        
     left: 15px;
-    width: 70px;      /* Tamanho grande para parecer marca d'água */
-    opacity: 0.1;     /* Bem discreto igual ao original */
+    width: 70px;      
+    opacity: 0.1;     
     transition: all 0.4s ease;
     z-index: 0;
-    pointer-events: none; /* Garante que o clique passe para o card */
-    /* Se o ícone for preto, essa linha o deixa branco/claro */
+    pointer-events: none; 
     filter: brightness(0) invert(1); 
 }
 
@@ -51,20 +49,23 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     line-height: 1.4;
-    z-index: 1; /* Garante que o texto fique na frente do ícone */
+    z-index: 1; 
     position: relative;
 }
 
-/* --- EFEITO HOVER (IGUAL AO ORIGINAL) --- */
-.item-consulta:hover {
+/* --- EFEITO HOVER & ACTIVE MOBILE --- */
+/* Adicionei a classe .active-mobile junto ao hover */
+.item-consulta:hover, 
+.item-consulta.active-mobile {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-5px);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-.item-consulta:hover .icone-etapa {
-    opacity: 0.15;      /* Fica um pouco mais visível no hover */
-    top: 20px;          /* Sobe um pouco, igual o efeito do número original */
+.item-consulta:hover .icone-etapa, 
+.item-consulta.active-mobile .icone-etapa {
+    opacity: 0.25;      /* Aumentei levemente para destacar no mobile */
+    top: 20px;          
     transform: scale(1.1);
 }
 
