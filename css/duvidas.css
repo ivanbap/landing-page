@@ -23,7 +23,7 @@
     padding: 40px 30px;
     border-radius: 15px;
     position: relative; 
-    transition: all 0.4s ease;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,7 +37,7 @@
     left: 15px;
     width: 70px;      
     opacity: 0.1;     
-    transition: all 0.4s ease;
+    transition: all 0.8s ease;
     z-index: 0;
     pointer-events: none; 
     filter: brightness(0) invert(1); 
@@ -53,29 +53,32 @@
     position: relative;
 }
 
-/* --- EFEITO HOVER & ACTIVE MOBILE --- */
-/* Adicionei a classe .active-mobile junto ao hover */
-.item-consulta:hover, 
+/* --- EFEITO EXCLUSIVO PARA COMPUTADOR (HOVER) --- */
+@media (hover: hover) {
+    .item-consulta:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-5px);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .item-consulta:hover .icone-etapa {
+        opacity: 0.25;      
+        top: 20px;          
+        transform: scale(1.1);
+    }
+}
+
+/* --- CLASSE ATIVADA PELO JS NO MOBILE --- */
 .item-consulta.active-mobile {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-5px);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-.item-consulta:hover .icone-etapa, 
 .item-consulta.active-mobile .icone-etapa {
-    opacity: 0.25;      /* Aumentei levemente para destacar no mobile */
+    opacity: 0.25;      
     top: 20px;          
     transform: scale(1.1);
-}
-.item-consulta {
-    /* ... seu código ... */
-    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Transição mais elegante */
-}
-
-.icone-etapa {
-    /* ... seu código ... */
-    transition: all 0.8s ease; /* O ícone demora um tiquinho mais para surgir */
 }
 
 /* --- RESPONSIVIDADE --- */
@@ -93,10 +96,9 @@
     
     .item-consulta {
         padding: 30px 20px;
-        text-align: center;
-        height: 100px;
+        height: 120px;
     }
     .icone-etapa {
-        width: 35px; 
+        width: 50px; 
     }
 }

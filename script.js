@@ -61,18 +61,27 @@ faqItems.forEach(item => {
         threshold: 0
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Adiciona a classe ao card que está no centro
-                entry.target.classList.add('active-mobile');
-            } else {
-                // Remove dos outros
-                entry.target.classList.remove('active-mobile');
-            }
-        });
-    }, observerOptionss);
+    //mobile animação
+    if (window.innerWidth <= 1024) {
+        const observerOptions = {
+            root: null,
+            // Foco centralizado: ativa quando o card passa pelo meio da tela
+            rootMargin: '-40% 0px -45% 0px', 
+            threshold: 0
+        };
 
-    document.querySelectorAll('.item-consulta').forEach(item => {
-        observer.observe(item);
-    });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active-mobile');
+                } else {
+                    entry.target.classList.remove('active-mobile');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.item-consulta').forEach(item => {
+            observer.observe(item);
+        });
+    }
+
