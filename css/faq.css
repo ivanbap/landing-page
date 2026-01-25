@@ -41,7 +41,7 @@
     border-radius: 8px; /* Bordas arredondadas por padrão */
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     transition: background 0.3s ease, border-radius 0.3s ease;
     position: relative;
     z-index: 2; /* Garante que fique acima da resposta */
@@ -123,7 +123,7 @@
 @media (max-width: 750px) {
     .faq-question {
         width: 95%;
-        padding: 6px 20px;
+        padding: 12px 20px;
         font-size: 14px;
     }
     .faq-answer {
