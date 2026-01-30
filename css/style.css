@@ -12,9 +12,9 @@
 
 @font-face {
     font-family: 'TT';
-    /* Usei o nome renomeado e removi a barra inicial */
-    src: url('/fonts/TT.otf') format('opentype');
-    font-weight: 100; /* Como ela é "Thin", defina como 100 */
+    /* Como o CSS está na raiz e a fonte na pasta fonts, o caminho é este: */
+    src: url('./fonts/TT.otf') format('opentype');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
