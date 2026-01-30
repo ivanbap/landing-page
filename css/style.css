@@ -7,4 +7,12 @@
 @import 'footer.css';
 @import 'estilos.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&family=Roboto:wght@100;200;300;400&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&family=Roboto:wght@100;200;300;400&display=swap" rel="stylesheet');  
+
+@font-face {
+    font-family: 'TT';
+    /* Tente carregar o OTF primeiro, se falhar, vai para o TTF */
+    src: url('/fonts/TT\ Drugs\ Trial\ Thin.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}

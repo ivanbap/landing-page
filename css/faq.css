@@ -1,6 +1,6 @@
 /* --- SEÇÃO FAQ COMPLETA (ANIMAÇÃO SUAVE) --- */
 .faq-bg {
-    background-color: #481C1E;
+    background-color: #3E231C;
     padding-top: 80px;
 }
 
@@ -55,7 +55,7 @@
 .icon {
     font-size: 26px;
     font-weight: 300;
-    color: #481C1E;
+    color: #3E231C;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
     pointer-events: none;

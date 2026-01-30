@@ -46,7 +46,7 @@
 
 .item h3 {
     font-family: 'Roboto', sans-serif;
-    color: #481C1E;
+    color: #3E231C;
     font-size: 19px;
     font-weight: 700;
     margin: 15px 0 10px 0; /* Margem superior para não bater no ícone */
@@ -64,7 +64,7 @@
 
 .item:hover, 
 .item.active-mobile {
-    border-color: #481C1E;
+    border-color: #3E231C;
     box-shadow: 0 15px 30px rgba(72, 28, 30, 0.08);
     transform: translateY(5px); /* Move levemente para baixo ao ativar */
 }
@@ -72,7 +72,7 @@
 .item:hover .icon-esp, 
 .item.active-mobile .icon-esp {
     filter: grayscale(0) opacity(1);
-    border-color: #481C1E;
+    border-color: #3E231C;
     transform: translateY(-5px); /* Ícone sobe enquanto card desce (efeito contrário) */
     background-color: #fdfafb;
 }

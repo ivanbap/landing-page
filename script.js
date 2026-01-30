@@ -61,7 +61,7 @@ faqItems.forEach(item => {
         threshold: 0
     };
 
-    //mobile animação
+    //mobile animação   
     if (window.innerWidth <= 1024) {
         const observerOptions = {
             root: null,
