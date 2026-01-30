@@ -13,7 +13,7 @@
 @font-face {
     font-family: 'TT';
     /* Usei o nome renomeado e removi a barra inicial */
-    src: url('/fonts/TT\ Drugs\ Trial\ Thin.otf') format('opentype');
+    src: url('/fonts/TT.otf') format('opentype');
     font-weight: 100; /* Como ela é "Thin", defina como 100 */
     font-style: normal;
     font-display: swap;
