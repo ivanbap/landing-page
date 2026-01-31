@@ -41,6 +41,15 @@
     color: #fff;
 }
 
+.img-sobre {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* Sombra suave para dar profundidade no fundo escuro */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
 /* --- RESPONSIVIDADE (TABLETS E TELAS MÉDIAS) --- */
 @media (max-width: 1000px) {
     .container-sobre {
