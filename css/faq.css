@@ -1,6 +1,6 @@
 /* --- SEÇÃO FAQ COMPLETA (ANIMAÇÃO SUAVE) --- */
 .faq-bg {
-    background-color: #3E231C;
+    background-color: #fff;
     padding-top: 80px;
 }
 
@@ -30,8 +30,8 @@
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
-    background-color: #fff;
-    color: #000;
+    background-color: #3E231C;
+    color: #fff;
     border: none;
     padding: 15px 40px;
     display: flex;
@@ -48,14 +48,14 @@
 }
 
 .faq-question:hover {
-    background-color: #e4e4e4;
+    background-color: #663a30;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
 }
 
 .icon {
     font-size: 26px;
     font-weight: 300;
-    color: #3E231C;
+    color: #fff;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
     pointer-events: none;
@@ -65,7 +65,7 @@
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #3E231C;
     border-radius: 0px 0px 10px 10px;
     margin-top: -10px; /* Sobreposição leve para evitar frestas */
     overflow: hidden;
@@ -77,7 +77,7 @@
 }
 
 .faq-answer p {
-    color: #555;
+    color: #fff;
     font-size: 14px;
     line-height: 1.7;
     font-family: 'Poppins', sans-serif;
@@ -95,14 +95,14 @@
 
 .faq-item.active .faq-question {
     border-radius: 12px 12px 0 0;
-    background-color: #fdfdfd;
+    background-color: #3E231C;
     box-shadow: none;
     transform: none;
 }
 
 .faq-item.active .icon {
     transform: rotate(45deg); /* Transforma o + em X */
-    color: #888; /* Muda a cor do ícone quando aberto */
+    color: #fff; /* Muda a cor do ícone quando aberto */
 }
 
 /* --- RESPONSIVIDADE --- */

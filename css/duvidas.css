@@ -101,4 +101,7 @@
     .icone-etapa {
         width: 50px; 
     }
+    .titulo-medio {
+        font-weight: 900;
+    }
 }

@@ -1,5 +1,12 @@
 .home {
-    background-color: #fff;
+    /* O linear-gradient cria uma camada escura para o texto branco ser lido com facilidade */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), 
+                      url('/img/homet2.JPG'); 
+
+    background-size: cover;
+    background-position: center ;
+    background-repeat: no-repeat;
+    
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
@@ -13,7 +20,7 @@
 }
 
 /* --- MENU DESKTOP --- */
-.header-menu {
+.header-menu {  
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -27,7 +34,7 @@
 .header-menu a {
     font-size: 16px;
     display: inline-block;
-    color: #000;
+    color: #fff;
     text-decoration: none;
     position: relative;
 }
@@ -38,7 +45,7 @@
     display: block;
     height: 2px;
     width: 0px;
-    background-color: #000;
+    background-color: #fff;
     margin-top: 4px;
     transition: 0.3s;
     position: absolute;
@@ -67,9 +74,10 @@
     margin-bottom: 60px;
     font-size: 72px;
     line-height: 1.125;
-    font-family: "TT", sans-serif;
+    font-family: "Roboto";
     font-style: italic;
     font-weight: 100;
+    color: #fff;
 }
 
 /* --- BOTÃO AGENDAR --- */
@@ -131,7 +139,7 @@
             background: transparent;
             cursor: pointer;
             font-size: 20px;
-            color: #000;
+            color: #fff;
         }
 
         /* Estiliza o menu que abre */
@@ -186,4 +194,8 @@
                 font-size: 48px;
                 margin-bottom: 20px;
         }
+
+        .home {
+        background-attachment: scroll; 
+    }
     }

@@ -1,9 +1,8 @@
 html, body {
     margin: 0px;
-    font-family: Arial, Helvetica, sans-serif;
     max-width: 100%;
     overflow-x: hidden;
-    font-family: "Montserrat";
+    font-family: "Montserrat", "Poppins", sans-serif;
 }
 
 ul {
@@ -51,8 +50,8 @@ img {
     color: #000;
 }
 
-.roxo {
-    color: #481C1E;
+.marrom {
+    color: #3E231C;
 }
 
 @media (max-width: 1000px) {
@@ -68,5 +67,6 @@ img {
     font-size: 40px;
     padding-top: 30px;
     font-family: "Montserrat";
+    font-weight: 500;
 }
 }

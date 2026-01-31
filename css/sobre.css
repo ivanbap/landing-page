@@ -1,6 +1,6 @@
 /* --- SEÇÃO SOBRE --- */
 .sobre {
-    background-color: #d9d9d9;
+    background-color: #3E231C;
     /* Adicionado um padding no topo para o título não colar no final da seção anterior */
     padding-top: 80px; 
 }
@@ -15,7 +15,7 @@
 .colunas-sobre {
     display: grid;
     /* Ajustado para 1fr 1fr para melhor equilíbrio entre foto e texto biográfico */
-    grid-template-columns: 60% 40%; 
+    grid-template-columns: 50% 50%; 
     gap: 80px;
     color: #fff;
     padding-left: 30px;
@@ -38,7 +38,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     text-align: justify;
-    color: #000;
+    color: #fff;
 }
 
 /* --- RESPONSIVIDADE (TABLETS E TELAS MÉDIAS) --- */
