@@ -1,7 +1,7 @@
 .home {
     /* O linear-gradient cria uma camada escura para o texto branco ser lido com facilidade */
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), 
-                      url('/img/homet2.JPG'); 
+                      url('/img/homet2.jpg'); 
 
     background-size: cover;
     background-position: center ;
