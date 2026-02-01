@@ -10,7 +10,7 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr; /* Duas colunas no PC */
-    gap: 60px;
+    gap: 60px;  
 }
 
 .titulo-footer {
