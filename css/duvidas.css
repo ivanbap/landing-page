@@ -97,6 +97,9 @@
     .item-consulta {
         padding: 30px 20px;
         height: 120px;
+        h3 {
+            font-size: 16px;
+        }
     }
     .icone-etapa {
         width: 50px; 

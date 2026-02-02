@@ -3,11 +3,6 @@
     padding: 80px 20px 40px 20px;
     color: #fff;
     overflow: hidden;
-    background-image: 
-        url('../img/marca-branca.png');
-    background-repeat: no-repeat;
-    background-position: center; 
-    background-size: 200px, 200px;
 }
 
 .footer {
@@ -15,14 +10,13 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr; /* Duas colunas no PC */
-    gap: 200px;  
 }
 
 .titulo-footer {
     font-family: 'Roboto', sans-serif;
     font-size: 36px;
     font-weight: 200;
-    margin-bottom: 20px;
+    
 }
 
 /* --- BLOCO CONTATO E REDES --- */
@@ -84,6 +78,13 @@
         grid-template-columns: 1fr; /* Tudo em uma coluna */
         text-align: center;
     }
+    .footer-bg {
+        background-image: 
+        url('../img/marca-branca.png');
+        background-repeat: no-repeat;
+        background-position: center 300px; 
+        background-size: 200px, 200px;
+    }
 
     .whats-info a, .icones-redes {
         justify-content: center; /* Alinha ícones no meio */
@@ -95,10 +96,18 @@
 
     .atendimento-container {
         align-items: center;
+        margin-top: 80px;
     }
 
     .mapbox {
         max-width: 100%;
         height: 220px;
     }
+    .titulo-footer {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .contato-container {
+    margin-bottom: 80px;
+}
 }
