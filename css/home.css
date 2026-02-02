@@ -4,8 +4,7 @@
     background-size: cover;
     background-position: center ;
     background-repeat: no-repeat;
-    
-    min-height: 100vh; 
+    height: 100vh; 
     display: flex;
     flex-direction: column;
 }
@@ -15,6 +14,10 @@
     max-width: 1200px;
     width: 100%;
     position: relative; /* Necessário para o menu mobile se posicionar */
+}
+
+.logo {
+    width: clamp(100px, 30vw, 400px);
 }
 
 /* --- MENU DESKTOP --- */
@@ -64,7 +67,7 @@
     flex-direction: column;
     justify-content: flex-end; /* Centraliza verticalmente */
     align-items: center;    
-    padding: 100px 20px;
+    padding: 100px 20px 40px 20px;
 }
 
 .titulo-home {
@@ -121,6 +124,10 @@
 
 /* --- MEDIA QUERIES (500px - FOCO NO MENU) --- */
     @media (max-width: 500px) {
+        .logo {
+            width: 400px;
+        }
+        
         .header-menu {
             justify-content: flex-start;
             padding-left: 20px;
