@@ -2,6 +2,12 @@
 .faq-bg {
     background-color: #fff;
     padding-top: 80px;
+    background-image: 
+        url('../img/marca-preta.png'), 
+        url('../img/marca-preta.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0px center, right 0px center; 
+    background-size: 200px, 200px;
 }
 
 .container-faq {

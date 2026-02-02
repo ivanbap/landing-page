@@ -3,6 +3,11 @@
     padding: 80px 20px 40px 20px;
     color: #fff;
     overflow: hidden;
+    background-image: 
+        url('../img/marca-branca.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: 200px, 200px;
 }
 
 .footer {
@@ -10,7 +15,7 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr; /* Duas colunas no PC */
-    gap: 60px;  
+    gap: 200px;  
 }
 
 .titulo-footer {

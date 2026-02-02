@@ -60,8 +60,6 @@
     margin: 0;
 }
 
-/* --- ANIMAÇÃO AUTOMÁTICA MOBILE E HOVER --- */
-
 .item:hover, 
 .item.active-mobile {
     border-color: #3E231C;
@@ -83,4 +81,8 @@
         grid-template-columns: 1fr;
         gap: 50px; /* Aumenta espaço para o ícone do card de baixo */
     }
+    .especialidades {
+        background-image: none;
+    }
 }
+
