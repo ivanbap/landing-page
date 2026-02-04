@@ -72,6 +72,32 @@
     /* Removido filtros para manter cor original do Google */
 }
 
+/* Container que agrupa a linha e o texto */
+.footer-bottom {
+    width: 100%;
+    clear: both; /* Garante que fique abaixo dos blocos flutuantes */
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+/* A barrinha fina */
+.linha-separadora {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2); /* Linha branca bem suave */
+    width: 90%; /* Largura da linha */
+    max-width: 1200px;
+    margin: 0 auto 20px auto; /* Centraliza e dá espaço para o texto */
+}
+
+/* Estilo do texto */
+.copyright-texto {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5); /* Texto mais discreto que o resto */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
 /* --- RESPONSIVIDADE (MOBILE) --- */
 @media (max-width: 800px) {
     .footer {
@@ -109,5 +135,8 @@
     }
     .contato-container {
     margin-bottom: 80px;
-}
+    }
+    .copyright-texto {
+        font-size: 14px;
+    }
 }
