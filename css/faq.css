@@ -11,17 +11,6 @@
     box-sizing: border-box;
 }
 
-.texto-faq {
-    font-size: 18px;
-    line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.8);    
-    text-align: center;
-    margin-bottom: 50px;
-    padding: 0 30px;
-}
-
 .faq-item { 
     margin-bottom: 15px;
 }
@@ -40,7 +29,7 @@
     cursor: pointer;
     border-radius: 8px; /* Bordas arredondadas por padrão */
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     font-family: 'Poppins', sans-serif;
     transition: background 0.3s ease, border-radius 0.3s ease;
     position: relative;
@@ -81,7 +70,7 @@
     font-size: 14px;
     line-height: 1.7;
     font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     padding: 8px 35px 15px 35px; /* Respiro interno */
     margin: 0;
 }
