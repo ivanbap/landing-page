@@ -193,6 +193,7 @@
             cursor: pointer;
             font-size: 20px;
             color: #fff;
+            margin-bottom: 20px;
         }
 
         /* Estiliza o menu que abre */
@@ -226,8 +227,8 @@
             border-bottom: 1px solid #eee;
             font-family: 'Poppins', sans-serif;
             font-weight: 300;
+            
         }
-
         /* Ajustes de texto para telas pequenas */
         .titulo-home {
             font-size: 48px;
