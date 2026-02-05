@@ -91,11 +91,14 @@
 }
 
 /* Estilo do texto */
-.copyright-texto {
+.copyright-texto , .copyright-texto-mobile {
     font-size: 18px;
     color: rgba(255, 255, 255, 0.5); /* Texto mais discreto que o resto */
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
+}
+.copyright-texto-mobile {
+    display: none;
 }
 
 /* --- RESPONSIVIDADE (MOBILE) --- */
@@ -136,7 +139,11 @@
     .contato-container {
     margin-bottom: 80px;
     }
+    .copyright-texto-mobile {
+    display: contents;
+    font-size: 14px;
+    }
     .copyright-texto {
-        font-size: 14px;
+    display: none;
     }
 }
