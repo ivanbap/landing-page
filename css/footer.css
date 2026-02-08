@@ -81,7 +81,7 @@
     text-align: center;
 }
 .footer-dev {
-    padding: 15px 0;
+    padding: 5px 0;
     background-color: rgba(0, 0, 0, 0.05); /* Um tom levemente diferente do fundo */
     border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha divisória quase imperceptível */
     text-align: center;
@@ -90,7 +90,7 @@
 /* Estilização do texto */
 .dev-texto {
     font-family: 'Montserrat', sans-serif; /* Ou a fonte que você estiver usando */
-    font-size: 13px;
+    font-size: 10px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5); /* Texto meio apagadinho para ser elegante */
     font-weight: 900;
