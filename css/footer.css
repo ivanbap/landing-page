@@ -16,7 +16,7 @@
     font-family: 'Roboto', sans-serif;
     font-size: 36px;
     font-weight: 200;
-    
+    margin-bottom: 10px;
 }
 
 /* --- BLOCO CONTATO E REDES --- */
@@ -80,14 +80,14 @@
     padding-bottom: 20px;
     text-align: center;
 }
+
+/* Dev */
 .footer-dev {
     padding: 5px 0;
     background-color: rgba(0, 0, 0, 0.05); /* Um tom levemente diferente do fundo */
     border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha divisória quase imperceptível */
     text-align: center;
 }
-
-/* Estilização do texto */
 .dev-texto {
     font-family: 'Montserrat', sans-serif; /* Ou a fonte que você estiver usando */
     font-size: 10px;
@@ -97,8 +97,6 @@
     text-transform: uppercase;
     margin: 0;
 }
-
-/* Estilização do seu Nome (Link) */
 .dev-link {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
@@ -107,8 +105,6 @@
     transition: all 0.3s ease;
     padding: 2px 5px;
 }
-
-/* Efeito de linha que "corre" embaixo do nome no hover */
 .dev-link::after {
     content: '';
     position: absolute;
@@ -119,17 +115,13 @@
     background-color: #fff; /* Ou a cor principal do site */
     transition: width 0.3s ease;
 }
-
 .dev-link:hover {
     color: #fff;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
-
 .dev-link:hover::after {
     width: 100%;
 }
-
-/* Pequeno detalhe decorativo antes do texto (opcional) */
 .code-icon::before {
     content: '</>';
     font-family: monospace;
@@ -138,7 +130,6 @@
     font-size: 14px;
 }
 
-/* A barrinha fina */
 .linha-separadora {
     height: 1px;
     background-color: rgba(255, 255, 255, 0.2); /* Linha branca bem suave */
@@ -147,7 +138,6 @@
     margin: 0 auto 20px auto; /* Centraliza e dá espaço para o texto */
 }
 
-/* Estilo do texto */
 .copyright-texto , .copyright-texto-mobile {
     font-size: 18px;
     color: rgba(255, 255, 255, 0.5); /* Texto mais discreto que o resto */
@@ -163,7 +153,6 @@
     margin-bottom: 10px;
     width: 180px;
 }
-
 /* --- RESPONSIVIDADE (MOBILE) --- */
 @media (max-width: 800px) {
     .footer {
