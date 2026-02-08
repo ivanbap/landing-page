@@ -206,13 +206,13 @@
         overflow: hidden;       /* Essencial para esconder o conteúdo quando fechado */
         max-height: 0;          /* Começa fechado */
         transition: max-height 0.4s ease-in-out; /* O efeito de "empurrar" suave */
-    }
+        }
 
-    /* Quando clicar, essa classe expande o menu */
-    .mobile-menu.active {
-        max-height: 300px;      /* Valor suficiente para cobrir seus links */
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+        /* Quando clicar, essa classe expande o menu */
+        .mobile-menu.active {
+            max-height: 300px;      /* Valor suficiente para cobrir seus links */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
 
         .mobile-list {
             list-style: none;
@@ -254,5 +254,5 @@
         background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), 
                       url('../img/home-mobile.jpg');
         height: 100vh; 
-    }
+        }
     }
