@@ -39,6 +39,9 @@
     font-weight: 300;
     text-align: justify;
     color: #fff;
+    strong {
+        font-weight: 700;
+    }
 }
 
 .img-sobre {
