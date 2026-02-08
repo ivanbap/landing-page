@@ -1,11 +1,15 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
 }
-html, body {
-    width: 100%;
-    overflow-x: hidden; /* Garante que nada escape para os lados */
+
+section {
+  scroll-margin-top: 100px;
+}
+
+/* IMPORTANTE: Se o seu header for fixo, a seção vai parar atrás dele. 
+   Use isso para dar um "respiro" no topo: */
+section {
+  scroll-margin-top: 100px; /* Ajuste para a altura do seu header */
 }
 
 .home, .sobre{
@@ -19,7 +23,6 @@ html, body {
 html, body {
     margin: 0px;
     max-width: 100%;
-    overflow-x: hidden;
     font-family: "Montserrat", "Poppins", sans-serif;
 }
 

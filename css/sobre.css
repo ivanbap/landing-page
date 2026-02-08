@@ -53,6 +53,10 @@
     transition: transform 0.3s ease;
 }
 
+section[id] {
+    scroll-margin-top: 200px; /* Ajuste esse valor para a altura exata do seu header */
+}
+
 /* --- RESPONSIVIDADE (TABLETS E TELAS MÉDIAS) --- */
 @media (max-width: 1000px) {
     .container-sobre {

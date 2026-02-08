@@ -103,5 +103,40 @@ faqItems.forEach(item => {
             observer.observe(item);
         });
     }
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            const headerHeight = 0; // Ajuste aqui a altura do seu header
+            const targetPosition = targetElement.offsetTop - headerHeight;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            const duration = 800; // Tempo da animação em milissegundos
+            let start = null;
+
+            // Função que cria o movimento suave
+            window.requestAnimationFrame(function step(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                
+                // Cálculo matemático para suavizar (ease out)
+                const scrollY = startPosition + distance * (progress / duration);
+                
+                window.scrollTo(0, scrollY);
+
+                if (progress < duration) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    window.scrollTo(0, targetPosition); // Garante que pare no lugar exato
+                }
+            });
+        }
+    });
+});
     
 
