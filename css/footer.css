@@ -1,6 +1,5 @@
 .footer-bg {
     background-color: #3E231C;
-    padding: 80px 20px 40px 20px;
     color: #fff;
     overflow: hidden;
 }
@@ -10,6 +9,7 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr; /* Duas colunas no PC */
+    padding: 80px 20px 0px 20px;
 }
 
 .titulo-footer {
@@ -79,6 +79,63 @@
     padding-top: 40px;
     padding-bottom: 20px;
     text-align: center;
+}
+.footer-dev {
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.05); /* Um tom levemente diferente do fundo */
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha divisória quase imperceptível */
+    text-align: center;
+}
+
+/* Estilização do texto */
+.dev-texto {
+    font-family: 'Montserrat', sans-serif; /* Ou a fonte que você estiver usando */
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5); /* Texto meio apagadinho para ser elegante */
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Estilização do seu Nome (Link) */
+.dev-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 2px 5px;
+}
+
+/* Efeito de linha que "corre" embaixo do nome no hover */
+.dev-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff; /* Ou a cor principal do site */
+    transition: width 0.3s ease;
+}
+
+.dev-link:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.dev-link:hover::after {
+    width: 100%;
+}
+
+/* Pequeno detalhe decorativo antes do texto (opcional) */
+.code-icon::before {
+    content: '</>';
+    font-family: monospace;
+    margin-right: 8px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 14px;
 }
 
 /* A barrinha fina */
