@@ -33,6 +33,7 @@ $(document).ready(function() {
         $('.btn-mobile i').addClass('fa-bars').removeClass('fa-xmark');
     }
 });
+/////
 
 //btn faq
 const faqItems = document.querySelectorAll('.faq-item');
@@ -45,7 +46,9 @@ faqItems.forEach(item => {
     item.classList.toggle('active');
   });
 });
+/////
 
+//animação especialidades mobile
     const observers = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             // Se o card estiver visível (pelo menos 50% na tela)
@@ -60,116 +63,104 @@ faqItems.forEach(item => {
     }, {
         threshold: 0.6 // Dispara quando 60% do card aparecer
     });
+/////
 
-    // Seleciona todos os cards de especialidades
-    document.querySelectorAll('.item').forEach(card => {
+// Seleciona todos os cards de especialidades
+document.querySelectorAll('.item').forEach(card => {
         observers.observe(card);
-    });
+});
 
-    const observerOptions = {
+const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.7 // Ativa quando 70% do card estiver na tela
-    };
+};
 
-    const observerOptionss = {
+const observerOptionss = {
         root: null,
         // O segredo está aqui: reduzimos a área de detecção para uma faixa 
         // estreita no centro da tela (entre 40% e 45%)
         rootMargin: '-40% 0px -45% 0px', 
         threshold: 0
+};
+/////
+
+
+//mobile animação consulta
+if (window.innerWidth <= 1024) {
+    const observerOptions = {
+        root: null,
+        // Foco centralizado: ativa quando o card passa pelo meio da tela
+        rootMargin: '-40% 0px -45% 0px', 
+        threshold: 0
     };
 
-    //mobile animação   
-    if (window.innerWidth <= 1024) {
-        const observerOptions = {
-            root: null,
-            // Foco centralizado: ativa quando o card passa pelo meio da tela
-            rootMargin: '-40% 0px -45% 0px', 
-            threshold: 0
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active-mobile');
-                } else {
-                    entry.target.classList.remove('active-mobile');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.item-consulta').forEach(item => {
-            observer.observe(item);
-        });
-    }
-    //animação rolar secção
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                const headerHeight = 0; // Ajuste aqui a altura do seu header
-                const targetPosition = targetElement.offsetTop - headerHeight;
-                const startPosition = window.pageYOffset;
-                const distance = targetPosition - startPosition;
-                const duration = 800; // Tempo da animação em milissegundos
-                let start = null;
-
-                // Função que cria o movimento suave
-                window.requestAnimationFrame(function step(timestamp) {
-                    if (!start) start = timestamp;
-                    const progress = timestamp - start;
-                    
-                    // Cálculo matemático para suavizar (ease out)
-                    const scrollY = startPosition + distance * (progress / duration);
-                    
-                    window.scrollTo(0, scrollY);
-
-                    if (progress < duration) {
-                        window.requestAnimationFrame(step);
-                    } else {
-                        window.scrollTo(0, targetPosition); // Garante que pare no lugar exato
-                    }
-                });
-            }
-        });
-    });
-
-
-
-
-const btnTop = document.getElementById("btnTop");
-    const footerArea = document.getElementById("meuFooter");
-
-    // Observador para mostrar o botão apenas quando chegar no footer
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                btnTop.classList.add("visible");
+                entry.target.classList.add('active-mobile');
             } else {
-                btnTop.classList.remove("visible");
+                entry.target.classList.remove('active-mobile');
             }
         });
-    }, {
-        threshold: 0.1 // Aparece quando 10% do footer surgir
+    }, observerOptions);
+
+    document.querySelectorAll('.item-consulta').forEach(item => {
+        observer.observe(item);
     });
+}
+/////
 
-    observer.observe(footerArea);
+//animação rolar secção
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+            
+        if (targetElement) {
+            const headerHeight = 0; // Ajuste aqui a altura do seu header
+            const targetPosition = targetElement.offsetTop - headerHeight;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            const duration = 1000; // Tempo da animação em milissegundos
+            let start = null;
 
-    // Função de rolagem suave
-    function topFunction() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+            // Função que cria o movimento suave
+            window.requestAnimationFrame(function step(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                    
+                // Cálculo matemático para suavizar (ease out)
+                const scrollY = startPosition + distance * (progress / duration);
+                    
+                window.scrollTo(0, scrollY);
+
+                if (progress < duration) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    window.scrollTo(0, targetPosition); // Garante que pare no lugar exato
+                }
+            });
+        }
+    });
+});
+/////
+
+
+// btn pra home
+window.addEventListener('scroll', function() {
+    const btn = document.getElementById('btnFlutuante');
+    // Aparece após rolar 500px
+    if (window.scrollY > 2500) {
+        btn.classList.add('mostrar');
+    } else {
+        btn.classList.remove('mostrar');
     }
+});
 
 
-    let mybutton = document.getElementById("btnTop");
 
 // Quando o usuário rolar a página, verifica se mostra o botão
 window.onscroll = function() { scrollFunction() };
