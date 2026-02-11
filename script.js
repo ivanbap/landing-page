@@ -152,8 +152,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // btn pra home
 window.addEventListener('scroll', function() {
     const btn = document.getElementById('btnFlutuante');
-    // Aparece após rolar 500px
-    if (window.scrollY > 2500) {
+    // Aparece após rolar 2300px
+    if (window.scrollY > 2300) {
         btn.classList.add('mostrar');
     } else {
         btn.classList.remove('mostrar');
